@@ -6,7 +6,7 @@ import javax.persistence.*;
 public class Building {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer id;
+    private Integer building_id;
     @Column(name = "nazov")
     private String nazov;
     @Column(name = "skratka_Budovy", length = 10)
@@ -16,11 +16,11 @@ public class Building {
 
 
     public Integer getId() {
-        return id;
+        return building_id;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.building_id = id;
     }
 
     public String getNazov() {
