@@ -1,0 +1,12 @@
+<h1>UI rezervacneho systemu</h1>
+<nav class="navbar navbar-dark bg-dark">
+  <ul>
+    <li><a routerLink="/dashboard-component" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a></li>
+    <li><a routerLink="/rezervacie-component" routerLinkActive="active" ariaCurrentWhenActive="page">Rezervacie</a>
+      <ul>
+        <li><a routerLink="/create-reservation-component" routerLinkActive="active" ariaCurrentWhenActive="page">Vytvorit novu rezervaciu</a></li>
+      </ul></li>
+  </ul>
+</nav>
+
+<router-outlet></router-outlet>
