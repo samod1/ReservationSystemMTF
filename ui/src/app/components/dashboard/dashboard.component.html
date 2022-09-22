@@ -1,7 +1,8 @@
 <h1>Vypis pouzivatelov</h1>
 <table>
   <tr *ngFor="let user of users">
-    <td>{{user.id}}</td>
+    <td><a href="{{user.id}}"></a></td> <!-- TODO Modalne okno pre zobrazenie detailu tabulky-->
     <td>{{user.meno}}</td>
+    <td>{{user.priezvisko}}</td>
   </tr>
 </table>
