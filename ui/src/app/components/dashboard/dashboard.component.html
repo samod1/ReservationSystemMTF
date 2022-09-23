@@ -4,5 +4,7 @@
     <td><a href="{{user.id}}"></a></td> <!-- TODO Modalne okno pre zobrazenie detailu tabulky-->
     <td>{{user.meno}}</td>
     <td>{{user.priezvisko}}</td>
+    <td *ngIf="user.studentMtf == 1 ; else elseBlock">Ano</td>
+    <ng-template #elseBlock>Nie</ng-template>
   </tr>
 </table>
