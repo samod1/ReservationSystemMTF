@@ -34,3 +34,4 @@ build/
 
 
 ## DB ##
+!**/rest/src/main/resources

@@ -10,7 +10,6 @@ import {UserService} from "../services/user.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { BuildingComponent } from './components/building/building.component';
-import { UserComponent } from './components/user/user.component';
 
 
 @NgModule({
@@ -19,8 +18,7 @@ import { UserComponent } from './components/user/user.component';
     DashboardComponent,
     RezervacieComponent,
     CreateReservationComponent,
-    BuildingComponent,
-    UserComponent
+    BuildingComponent
   ],
   imports: [
     BrowserModule,
