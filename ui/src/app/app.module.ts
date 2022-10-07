@@ -9,6 +9,7 @@ import { CreateReservationComponent } from './components/rezervacie/create-reser
 import {UserService} from "../services/user.service";
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
+import { BuildingComponent } from './components/building/building.component';
 
 
 @NgModule({
@@ -16,7 +17,8 @@ import {FormsModule} from "@angular/forms";
     AppComponent,
     DashboardComponent,
     RezervacieComponent,
-    CreateReservationComponent
+    CreateReservationComponent,
+    BuildingComponent
   ],
   imports: [
     BrowserModule,

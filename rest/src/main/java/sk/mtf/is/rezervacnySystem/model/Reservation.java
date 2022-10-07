@@ -8,7 +8,7 @@ import javax.persistence.*;
 @Table(name = "rezervacie")
 public class Reservation {
     @Id
-    @GeneratedValue(strategy = GenerationType.TABLE)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Integer id;
 
     @Column(columnDefinition = "DateTime")

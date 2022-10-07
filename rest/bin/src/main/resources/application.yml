@@ -1,0 +1,4 @@
+app:
+  name: diplomova praca MP
+server:
+  port: 14430

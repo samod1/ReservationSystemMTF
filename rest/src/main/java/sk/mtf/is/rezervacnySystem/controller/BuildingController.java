@@ -10,15 +10,17 @@ import sk.mtf.is.rezervacnySystem.repository.BuildingRepository;
 
 import java.util.Optional;
 
-@Controller
+@RestController
 @RequestMapping(path = "/building")
+@CrossOrigin(origins = "localhost:4200")
 public class BuildingController {
     @Autowired
     private BuildingRepository buildingRepository;
 
 
-    @PostMapping(value = "/create")
-    public @ResponseBody String addNewBuilding(@RequestParam String nazov,@RequestParam String skratka, @RequestParam Integer pocet_poschodi)
+    @PostMapping(path = "/create")
+    public @ResponseBody String addNewBuilding(@RequestParam String nazov,@RequestParam String skratka,
+                                               @RequestParam Integer pocet_poschodi)
     {
         Building b = new Building();
         b.setNazov(nazov);
@@ -28,7 +30,7 @@ public class BuildingController {
         return "Created";
     }
 
-    @PostMapping (path = "/all")
+    @GetMapping (path = "/all")
     public @ResponseBody Iterable<Building> getAllBuildings()
     {
         return buildingRepository.findAll();
@@ -51,6 +53,8 @@ public class BuildingController {
         buildingRepository.deleteById(id);
         return new ResponseEntity<>(HttpStatus.OK);
     }
+
+    /*@PutMapping(path = "/edit/{id}")*/
 
 
 }
