@@ -1,0 +1,18 @@
+<h1>Vypis pouzivatelov</h1>
+<table>
+    <thead>
+        <th colspan="2">Meno a priezvisko</th>
+        <th>Student MTF</th>
+        <th>Akcia</th>
+    </thead>
+  <tr *ngFor="let user of users">
+    <td><a href="{{user.id}}"></a></td> <!-- TODO Modalne okno pre zobrazenie detailu tabulky-->
+    <td>{{user.meno}}</td>
+    <td>{{user.priezvisko}}</td>
+    <td *ngIf="user.studentMtf == 1 ; else elseBlock">Ano</td>
+    <ng-template #elseBlock>Nie</ng-template>
+    <button type="button" class="btn btn-primary" (click)="onClickMe($event)" clickable>Primary</button>
+
+    {{clickMessage}}
+  </tr>
+</table>

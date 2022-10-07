@@ -9,18 +9,9 @@ import { User} from "../../../models/user";
 })
 export class DashboardComponent implements OnInit {
 
-  users: User[];
-  clickMessage = '';
-  constructor(private  UserService: UserService) { }
-
-  ngOnInit() {
-
-   this.UserService.findAll().subscribe(data => { this.users = data;})
+  ngOnInit(): void {
+      
   }
 
-  onClickMe(event?: MouseEvent)
-  {
-    const evtMsg = event ? 'Event target is' + (event.target as HTMLElement).className : '';
-    alert('Click me' + evtMsg);
-  }
+  
 }
