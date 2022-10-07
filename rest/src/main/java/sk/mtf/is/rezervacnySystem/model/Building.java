@@ -5,8 +5,8 @@ import javax.persistence.*;
 @Entity
 public class Building {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private Integer building_id;
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int building_id;
     @Column(name = "nazov")
     private String nazov;
     @Column(name = "skratka_Budovy", length = 10)

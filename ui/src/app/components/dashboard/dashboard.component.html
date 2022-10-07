@@ -6,5 +6,8 @@
     <td>{{user.priezvisko}}</td>
     <td *ngIf="user.studentMtf == 1 ; else elseBlock">Ano</td>
     <ng-template #elseBlock>Nie</ng-template>
+    <button type="button" class="btn btn-primary" (click)="onClickMe($event)" clickable>Primary</button>
+
+    {{clickMessage}}
   </tr>
 </table>
