@@ -1,11 +1,9 @@
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <ul class="navbar-nav mr-auto">
-    <li class="nav-item"><a class="nav-link" routerLink="/dashboard-component" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a></li>
-    <li class="nav-item"><a class="nav-link" routerLink="/rezervacie-component" routerLinkActive="active" ariaCurrentWhenActive="page">Rezervacie</a></li>
-    <li class="nav-item"><a class="nav-link" routerLink="/building-component" routerLinkActive="active" ariaCurrentWhenActive="page">Budovy</a></li>
-    <li class="nav-item"><a class="nav-link" routerLink="/user-component" routerLinkActive="active" ariaCurrentWhenActive="page">Pouzivatelia</a></li>
-  </ul>
-</nav>
+<c-nav variant="pills">
+    <a routerLink="/dashboard-component" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a>
+    <a routerLink="/rezervacie-component" routerLinkActive="active" ariaCurrentWhenActive="page">Rezervacie</a>
+    <a routerLink="/building-component" routerLinkActive="active" ariaCurrentWhenActive="page">Budovy</a>
+    <a routerLink="/user-component" routerLinkActive="active" ariaCurrentWhenActive="page">Pouzivatelia</a>
+</c-nav>
 
 <router-outlet></router-outlet>

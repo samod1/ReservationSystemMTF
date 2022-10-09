@@ -11,6 +11,8 @@ import {HttpClientModule} from "@angular/common/http";
 import {FormsModule} from "@angular/forms";
 import { BuildingComponent } from './components/building/building.component';
 import { UserComponent } from './components/user/user.component';
+import { GridModule } from '@coreui/angular';
+import { AlertModule, NavModule } from '@coreui/angular';
 
 
 @NgModule({
@@ -26,7 +28,10 @@ import { UserComponent } from './components/user/user.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    GridModule,
+    AlertModule,
+    NavModule
   ],
   providers: [UserService],
   bootstrap: [AppComponent]
