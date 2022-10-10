@@ -2,10 +2,7 @@ package sk.mtf.is.rezervacnySystem.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
-import sk.mtf.is.rezervacnySystem.model.Building;
 import sk.mtf.is.rezervacnySystem.model.User;
 import sk.mtf.is.rezervacnySystem.repository.UserRepository;
 

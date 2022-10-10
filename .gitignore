@@ -41,5 +41,3 @@ build/
 
 
 ## DB ##
-/application.properties
-/rest/src/main/resources/application.properties
