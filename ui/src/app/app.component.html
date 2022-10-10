@@ -1,9 +1,26 @@
 
-<c-nav variant="pills">
-    <a routerLink="/dashboard-component" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a>
-    <a routerLink="/rezervacie-component" routerLinkActive="active" ariaCurrentWhenActive="page">Rezervacie</a>
-    <a routerLink="/building-component" routerLinkActive="active" ariaCurrentWhenActive="page">Budovy</a>
-    <a routerLink="/user-component" routerLinkActive="active" ariaCurrentWhenActive="page">Pouzivatelia</a>
-</c-nav>
+<c-header>
+    <c-nav variant="pills">
+        <a cNavLink routerLink="/dashboard-component" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a>
+        <a cNavLink routerLink="/rezervacie-component" routerLinkActive="active" ariaCurrentWhenActive="page">Rezervacie</a>
+        <a cNavLink routerLink="/building-component" routerLinkActive="active" ariaCurrentWhenActive="page">Budovy</a>
+        <a cNavLink routerLink="/user-component" routerLinkActive="active" ariaCurrentWhenActive="page">Pouzivatelia</a>
+    </c-nav>
+
+    <div class="row">
+        <div class="col-4">
+            <c-dropdown>
+                <a cButton cDropdownToggle><c-avatar color="primary" textColor="white">CUI</c-avatar></a>
+
+                <ul cDropdownMenu>
+                    <li><a routerLink="/settings-component" cDropdownItem>Nastavenia uctu</a></li>
+                    <li><a routerLink="[]" cDropdownItem>Odhlasenie</a></li>
+
+                </ul>
+                
+            </c-dropdown></div>
+    </div>
+</c-header>
+
 
 <router-outlet></router-outlet>
