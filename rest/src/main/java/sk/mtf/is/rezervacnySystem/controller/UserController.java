@@ -10,7 +10,7 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "localhost:4200")
-@RequestMapping(path="/user")
+
 public class UserController {
     @Autowired
     private UserRepository userRepository;
@@ -48,6 +48,12 @@ public class UserController {
     public @ResponseBody Optional<User> getBuildingById(@PathVariable("id") Integer id)
     {
         return userRepository.findById(id);
+    }
+
+    @DeleteMapping(path = "/user/{userid}")
+    private void deleteUser(@PathVariable("userid") int userid)
+    {
+        userService.deleteUser(userid);
     }
 
 }
