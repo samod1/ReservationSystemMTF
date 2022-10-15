@@ -16,41 +16,58 @@ import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "localhost:4200")
-
+/*@RequestMapping(path="/user")*/
 public class UserController {
     @Autowired
     private UserService userService;
+    /*private UserRepository userRepository;*/
 
+   /* @PostMapping(path = "/add")
+    public @ResponseBody String createUser(@RequestParam String username, @RequestParam String password,
+                                           @RequestParam String meno, @RequestParam String priezvisko,
+                                           @RequestParam String datumNarodenia, @RequestParam String email,
+                                           @RequestParam Integer studentMtf, @RequestParam Integer status) {
+
+        User u = new User();
+        u.setMeno(meno);
+        u.setPriezvisko(priezvisko);
+        u.setUsername(username);
+        u.setPassword(password);
+        u.setDatumNarodenia(datumNarodenia);
+        u.setEmail(email);
+        u.setStudentMtf(studentMtf);
+        u.setStatus(status);
+        userRepository.save(u);
+        return "Created";
+
+
+    }
+
+    @GetMapping(path = "/all")
+    public @ResponseBody Iterable<User> getAllUsers() {
+        return userRepository.findAll();
+    }
+
+    @GetMapping(path = "/{id}")
     /**
-     *
-     * @return vratia sa vsetky zaznamy s pouzivatelmi
+     * Get user by id
      */
+    /* public @ResponseBody Optional<User> getBuildingById(@PathVariable("id") Integer id) {
+        return userRepository.findById(id);
+    }
+
+     */
+
     @GetMapping("/user")
     private List<User> getAllUsers()
     {
         return userService.getAllUsers();
     }
 
-    @GetMapping("/user/{userid}")
-    private User getUserById(@PathVariable("userid") int id)
-    {
-        return userService.getUserById(id);
-    }
-
-    /**
-     *
-     * @param user updatovany pouzivatel ako JSON
-     */
     @PutMapping(path = "/edit")
     public void updateUser(@RequestBody User user)
     {
         userService.updateUser(user);
-    }
-
-    @DeleteMapping(path = "/user/{userid}")
-    private void deleteUser(@PathVariable("userid") int userid)
-    {
-        userService.deleteUser(userid);
     }
 
 }

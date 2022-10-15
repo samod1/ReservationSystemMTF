@@ -28,14 +28,5 @@ public class UserService {
 
         return users;
     }
-
-    public User getUserById(int id) {
-        return userRepository.findById(id).get();
-    }
-
-
-    public void deleteUser(int userid) {
-        userRepository.deleteById(userid);
-    }
 }
 
