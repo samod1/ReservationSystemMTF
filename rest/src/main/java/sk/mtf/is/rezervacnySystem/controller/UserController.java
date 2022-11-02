@@ -16,6 +16,7 @@ public class UserController {
     @Autowired
     private UserService userService;
 
+    /* 
     @PostMapping(path = "/add")
     public @ResponseBody String createUser(@RequestParam String username, @RequestParam String password,
                                            @RequestParam String meno, @RequestParam String priezvisko,
@@ -45,11 +46,12 @@ public class UserController {
 
     /**
      * Get all users
-     */
+     
     public @ResponseBody Optional<User> getBuildingById(@PathVariable("id") Integer id)
     {
         return userRepository.findById(id);
     }
+*/
 
     @DeleteMapping(path = "/user/{userid}")
     private void deleteUser(@PathVariable("userid") int userid)
