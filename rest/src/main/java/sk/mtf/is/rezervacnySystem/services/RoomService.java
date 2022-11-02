@@ -7,6 +7,7 @@ import sk.mtf.is.rezervacnySystem.repository.RoomRepository;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class RoomService {
@@ -18,6 +19,11 @@ public class RoomService {
         roomRepository.findAll().forEach(room1 -> rooms.add(room1));
 
         return rooms;
+    }
+
+    public Room getRoomsById(int roomId){
+
+        return roomRepository.getOne(roomId);
     }
 
 }
