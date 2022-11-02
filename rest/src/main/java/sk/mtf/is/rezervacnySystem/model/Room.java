@@ -12,7 +12,7 @@ public class Room {
     @Column
     @SequenceGenerator(name = "room_seq_id", sequenceName = "room_seq_id", allocationSize = 1)
     @GeneratedValue(strategy = SEQUENCE, generator = "room_seq_id")
-    private Integer roomId;
+    private Long roomId;
 
 
     @OneToOne
@@ -26,11 +26,11 @@ public class Room {
 
     private int pocetStolov;
 
-    public Integer getRoomId() {
+    public Long getRoomId() {
         return roomId;
     }
 
-    public void setRoomId(Integer roomId) {
+    public void setRoomId(Long roomId) {
         this.roomId = roomId;
     }
 
