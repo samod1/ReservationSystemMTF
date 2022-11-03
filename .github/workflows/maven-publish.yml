@@ -9,10 +9,11 @@ on:
   release:
     types: [created]
   push:
-    branch ["samod"]
+    branches: 
+      - samod
     paths:
       - rest
-
+ 
 jobs:
   build:
 
