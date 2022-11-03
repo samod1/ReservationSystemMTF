@@ -5,13 +5,13 @@ import javax.persistence.*;
 
 
 @Entity
-@Table (name = "User")
+@Table (name = "rs_tbl_user")
 public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(nullable = false, updatable = false)
-    private int id;
+    private int userId;
     @Column(nullable = false, unique = true)
     private String username;
     @Column(nullable = false)
@@ -32,11 +32,11 @@ public class User {
     }
 
     public int getId() {
-        return id;
+        return userId;
     }
 
     public void setId(int id) {
-        this.id = id;
+        this.userId = id;
     }
 
     public String getUsername() {

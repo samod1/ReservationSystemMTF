@@ -9,7 +9,7 @@ import javax.persistence.*;
 public class Reservation {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
-    private Integer id;
+    private Integer reservationId;
 
     @Column(columnDefinition = "DateTime")
     @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
@@ -27,11 +27,11 @@ public class Reservation {
 
 
     public Integer getId() {
-        return id;
+        return reservationId;
     }
 
     public void setId(Integer id) {
-        this.id = id;
+        this.reservationId = id;
     }
 
     public String getDatum_od() {
