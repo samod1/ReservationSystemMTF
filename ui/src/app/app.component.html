@@ -1,12 +1,20 @@
 
 <c-header>
+    <c-sidebar visible>
+        <c-sidebar-brand>Navigacie</c-sidebar-brand>
+        <c-sidebar-nav>
+            <a cNavLink routerLink="/dashboard-component" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a>
+            <a cNavLink routerLink="/rezervacie-component" routerLinkActive="active" ariaCurrentWhenActive="page">Rezervacie</a>
+            <a cNavLink routerLink="/building-component" routerLinkActive="active" ariaCurrentWhenActive="page">Budovy</a>
+            <a cNavLink routerLink="/user-component" routerLinkActive="active" ariaCurrentWhenActive="page">Pouzivatelia</a>
+        </c-sidebar-nav>
+        <c-sidebar-toggler toggle="true"></c-sidebar-toggler>
+    </c-sidebar>
+<!--    
     <c-nav variant="pills">
-        <a cNavLink routerLink="/dashboard-component" routerLinkActive="active" ariaCurrentWhenActive="page">Dashboard</a>
-        <a cNavLink routerLink="/rezervacie-component" routerLinkActive="active" ariaCurrentWhenActive="page">Rezervacie</a>
-        <a cNavLink routerLink="/building-component" routerLinkActive="active" ariaCurrentWhenActive="page">Budovy</a>
-        <a cNavLink routerLink="/user-component" routerLinkActive="active" ariaCurrentWhenActive="page">Pouzivatelia</a>
+        
     </c-nav>
-
+-->
     <div class="row">
         <div class="col-4">
             <c-dropdown>

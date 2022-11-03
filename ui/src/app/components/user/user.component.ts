@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from 'src/services/user.service';
 import { User } from 'src/models/user';
+import { environment } from 'src/environments/environment';
+import { Data } from '@angular/router';
 
 @Component({
   selector: 'app-user',
@@ -13,13 +15,10 @@ export class UserComponent implements OnInit {
   constructor(private  UserService: UserService) { }
 
   ngOnInit(): void {
-    this.UserService.findAll().subscribe(data => { this.users = data;})
-  }
-
-  onClickMe(event?: MouseEvent)
-  {
-    const evtMsg = event ? 'Event target is' + (event.target as HTMLElement).className : '';
-    alert('Click me' + evtMsg);
+    this.UserService.getUsers().subscribe((data: User []) =>
+    {
+      this.users = data;
+    });
   }
 }
 
