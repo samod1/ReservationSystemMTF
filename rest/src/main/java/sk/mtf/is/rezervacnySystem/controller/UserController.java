@@ -5,6 +5,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import sk.mtf.is.rezervacnySystem.model.User;
 import sk.mtf.is.rezervacnySystem.repository.UserRepository;
+import sk.mtf.is.rezervacnySystem.services.UserService;
 
 import java.util.Optional;
 
@@ -13,7 +14,7 @@ import java.util.Optional;
 
 public class UserController {
     @Autowired
-    private UserRepository userRepository;
+    private UserService userService;
 
     @PostMapping(path = "/add")
     public @ResponseBody String createUser(@RequestParam String username, @RequestParam String password,

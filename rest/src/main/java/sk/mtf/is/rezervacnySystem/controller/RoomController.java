@@ -9,7 +9,6 @@ import sk.mtf.is.rezervacnySystem.repository.RoomRepository;
 import sk.mtf.is.rezervacnySystem.services.RoomService;
 
 import java.util.List;
-import java.util.Optional;
 
 @RestController
 @CrossOrigin(origins = "localhost:4200")
@@ -34,9 +33,7 @@ public class RoomController {
         roomRepository.save(r);
 
         return "Created";
-    }
 
-    @GetMapping(path = "/room/{roomId}")
-    private Room getRoomsById(@PathVariable("roomId") int roomId) {return roomSerivce.getRoomsById(roomId);}
+    }
 
 }
