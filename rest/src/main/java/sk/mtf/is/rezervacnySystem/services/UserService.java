@@ -14,13 +14,32 @@ public class UserService {
     @Autowired
     private UserRepository userRepository;
 
-
-
-
-
-    public void updateUser(User user) {
-        userRepository.save(user);
+    public String addNewUser(String meno, String priezvisko, String username, String password, String datumNarodenia, String email, Integer studentMtf, Integer status)
+    {
+        User u = new User();
+        u.setMeno(meno);
+        u.setPriezvisko(priezvisko);
+        u.setUsername(username);
+        u.setPassword(password);
+        u.setDatumNarodenia(datumNarodenia);
+        u.setEmail(email);
+        u.setStudentMtf(studentMtf);
+        u.setStatus(status);
+        userRepository.save(u);
+        return "Created";
     }
+
+    public void updateUser(Integer id, User Inuser) {/*
+        for (int i=0; i< liUser.size(); i++)
+        {
+            User user = liUser.get(i);
+            if (user.getId().equals(id))
+            {
+                liUser.set(i,Inuser);
+                return "Updated";
+            }
+        */}
+
 
     public List<User> getAllUsers() {
         List<User> users = new ArrayList<User>();
