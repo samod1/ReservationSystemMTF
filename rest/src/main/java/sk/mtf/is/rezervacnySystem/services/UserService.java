@@ -65,5 +65,13 @@ public class UserService {
     public ResponseEntity<List<User>> getUsersByEmail(String email) {
         return new ResponseEntity<List<User>>(userRepository.findByEmail(email), HttpStatus.OK);
     }
+
+    public ResponseEntity<List<User>> getUsersByName(String meno) {
+        return new ResponseEntity<List<User>>(userRepository.findByMeno(meno), HttpStatus.OK);
+    }
+
+    public ResponseEntity<List<User>> getUsersByLastName(String priezvisko ) {
+        return new ResponseEntity<List<User>>(userRepository.findByPriezvisko(priezvisko), HttpStatus.OK);
+    }
 }
 
