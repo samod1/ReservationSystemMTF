@@ -53,4 +53,17 @@ public class UserController {
         return userService.getUsersByEmail(email);
     }
 
+    @GetMapping(path =  "/user/firstname")
+    public ResponseEntity<List<User>> getUsersByName (@RequestParam String meno)
+    {
+        return userService.getUsersByName(meno);
+    }
+
+    @GetMapping(path =  "/user/lastname")
+    public ResponseEntity<List<User>> getUsersByLastName (@RequestParam String priezvisko)
+    {
+        return userService.getUsersByLastName(priezvisko);
+    }
+
+
 }
