@@ -2,6 +2,8 @@ package sk.mtf.is.rezervacnySystem.controller;
 
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import sk.mtf.is.rezervacnySystem.model.User;
 import sk.mtf.is.rezervacnySystem.repository.UserRepository;
@@ -28,21 +30,27 @@ public class UserController {
      * Get all users
      **/
     @GetMapping (path = "/all")
-    public @ResponseBody List<User> getAllUsers()
+    public @ResponseBody Iterable<User> getAllUsers()
     {
         return userService.getAllUsers();
     }
 
-    @PutMapping(path = "user/edit/{id}")
-    public void updateUser (@RequestParam User user, @PathVariable Integer id)
+    @PutMapping(path = "user/edit/{userid}")
+    public ResponseEntity<User> updateUser (@RequestBody User user, @PathVariable("userid") int id)
     {
-        userService.updateUser(id,user);
+        return new ResponseEntity<User>(userService.updateUser(user,id), HttpStatus.OK);
     }
 
     @DeleteMapping(path = "/user/{userid}")
     private void deleteUser(@PathVariable("userid") int userid)
     {
         userService.deleteUser(userid);
+    }
+
+    @GetMapping(path = "/user/email")
+    public ResponseEntity<List<User>> getUsersByEmail (@RequestParam String email)
+    {
+        return userService.getUsersByEmail(email);
     }
 
 }

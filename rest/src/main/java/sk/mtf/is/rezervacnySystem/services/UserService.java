@@ -1,6 +1,8 @@
 package sk.mtf.is.rezervacnySystem.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import sk.mtf.is.rezervacnySystem.model.User;
 import sk.mtf.is.rezervacnySystem.repository.UserRepository;
@@ -29,16 +31,19 @@ public class UserService {
         return "Created";
     }
 
-    public void updateUser(Integer id, User Inuser) {/*
-        for (int i=0; i< liUser.size(); i++)
-        {
-            User user = liUser.get(i);
-            if (user.getId().equals(id))
-            {
-                liUser.set(i,Inuser);
-                return "Updated";
-            }
-        */}
+    public User updateUser(User user, Integer id) {
+        User existingUser = userRepository.findById(id).orElseThrow(() -> new RuntimeException("Not Found") );
+        existingUser.setMeno(user.getMeno());
+        existingUser.setPriezvisko(user.getPriezvisko());
+        existingUser.setEmail(user.getEmail());
+        existingUser.setDatumNarodenia(user.getDatumNarodenia());
+
+        userRepository.save(existingUser);
+
+        return existingUser;
+
+
+    }
 
 
     public List<User> getAllUsers() {
@@ -55,6 +60,10 @@ public class UserService {
 
     public void deleteUser(int userid) {
         userRepository.deleteById(userid);
+    }
+
+    public ResponseEntity<List<User>> getUsersByEmail(String email) {
+        return new ResponseEntity<List<User>>(userRepository.findByEmail(email), HttpStatus.OK);
     }
 }
 
