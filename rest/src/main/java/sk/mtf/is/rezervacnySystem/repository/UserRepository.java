@@ -4,5 +4,8 @@ import org.springframework.data.repository.CrudRepository;
 import sk.mtf.is.rezervacnySystem.model.User;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface UserRepository extends CrudRepository<User,Integer> {
+import java.util.List;
+
+public interface UserRepository extends JpaRepository<User,Integer> {
+    List<User> findByEmail(String email);
 }
