@@ -13,7 +13,9 @@ public class Room {
     @GeneratedValue(strategy = SEQUENCE, generator = "room_seq_id")
     private Integer roomId;
 
-
+    @ManyToOne(cascade = {CascadeType.PERSIST})
+    @JoinColumn(name = "floorid")
+    private Floor floor;
     @OneToOne
     @JoinColumn(name = "vytvorilo_id_user_id")
     private User vytvoriloID;
@@ -24,6 +26,10 @@ public class Room {
     private Building idBudovy;
 
     private int pocetStolov;
+
+    public Floor getFloor() {
+        return floor;
+    }
 
     public Integer getRoomId() {
         return roomId;
