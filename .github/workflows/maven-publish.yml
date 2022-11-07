@@ -10,7 +10,7 @@ on:
     branches: 
       - samod
     paths:
-      - rest/
+      - 'rest/**'
  
 jobs:
   build:
