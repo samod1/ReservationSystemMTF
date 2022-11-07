@@ -1,7 +1,10 @@
 package sk.mtf.is.rezervacnySystem.model;
 
 
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity
 @Table(name = "rs_tbl_floor")
@@ -13,13 +16,26 @@ public class Floor {
     private Integer floorId;
 
 
-    @OneToMany
+    @ManyToOne(cascade = {CascadeType.PERSIST})
     @JoinColumn(name = "buildingId")
-    @Column(name = "building_id")
     private Building buildingId;
 
+    @NotNull
     @Column(name = "nazov_poschodia")
     private String nazovPoschodia;
+
+    public User getVytvoriloID() {
+        return vytvoriloID;
+    }
+
+    public void setVytvoriloID(User vytvoriloID) {
+        this.vytvoriloID = vytvoriloID;
+    }
+
+    @OneToOne
+    @JoinColumn(name = "vytvorilo_id_user_id")
+    private User vytvoriloID;
+
 
 
     public Building getBuildingId() {
