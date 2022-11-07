@@ -1,7 +1,6 @@
 package sk.mtf.is.rezervacnySystem.model;
 
 import javax.persistence.*;
-
 import static javax.persistence.GenerationType.SEQUENCE;
 
 
