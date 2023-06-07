@@ -5,9 +5,7 @@ Project for my alma mater who "ordered" this software for the newly prepared cow
 ## Structure of repo:
 
 - UI - will be developed in angular
-
 - REST - is developed in Java's framework springboot.
--
 
 
 
